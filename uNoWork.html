@@ -215,9 +215,9 @@
 						velocity.y = Math.max( 0, velocity.y );
 						canJump = true;
 					}
-					//controls.getObject().translateX( velocity.x * delta );
-					//controls.getObject().position.y += ( velocity.y * delta ); // new behavior
-					//controls.getObject().translateZ( velocity.z * delta );
+					controls.getObject().translateX( velocity.x * delta );
+					controls.getObject().position.y += ( velocity.y * delta ); // new behavior
+					controls.getObject().translateZ( velocity.z * delta );
 					if ( controls.getObject().position.y < 10 ) {
 						velocity.y = 0;
 						controls.getObject().position.y = 10;
