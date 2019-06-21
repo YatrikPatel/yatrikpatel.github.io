@@ -14,8 +14,10 @@
 		<script>
 			var scene = new THREE.Scene();
 			var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-
+			var controls = new THREE.PointerLockControls(camera);
 			var renderer = new THREE.WebGLRenderer({antialias: true});
+			var raycaster = new THREE.Raycaster(new THREE.Vector3(), new THREE.Vector3(0, -1, 0), 0, 10);
+			
 			renderer.setSize( window.innerWidth, window.innerHeight );
 			document.body.appendChild( renderer.domElement );
 			
@@ -26,8 +28,17 @@
 
 			camera.position.z = 5;
 			
+			document.body.addEventListener("click", function () {
+				controls.lock();
+			})
+			
 			function animate() {
 				requestAnimationFrame( animate );
+				
+				if (controls.isLocked) {
+					raycaster.ray.origin.copy( controls.getObject().position );
+					raycaster.ray.origin.y -= 10;
+				}
 				cube.rotation.x += 0.01;
 				cube.rotation.y += 0.01;
 				renderer.render( scene, camera );
