@@ -27,11 +27,11 @@
 				renderer = new THREE.WebGLRenderer({antialias: true});
 				raycaster = new THREE.Raycaster(new THREE.Vector3(), new THREE.Vector3(0, -1, 0), 0, 10);
 				
-				controls.addEventListener('lock', function () {
+				/*controls.addEventListener('lock', function () {
 
 				});
 				controls.addEventListener( 'unlock', function () {
-				});
+				});*/
 				
 				document.body.addEventListener("click", function () {
 					controls.lock();
