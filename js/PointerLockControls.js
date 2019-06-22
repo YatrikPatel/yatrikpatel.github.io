@@ -1,3 +1,8 @@
+/**
+ * @author mrdoob / http://mrdoob.com/
+ * @author Mugen87 / https://github.com/Mugen87
+ */
+
 THREE.PointerLockControls = function ( camera, domElement ) {
 
 	this.domElement = domElement || document.body;
@@ -116,3 +121,6 @@ THREE.PointerLockControls = function ( camera, domElement ) {
 	this.connect();
 
 };
+
+THREE.PointerLockControls.prototype = Object.create( THREE.EventDispatcher.prototype );
+THREE.PointerLockControls.prototype.constructor = THREE.PointerLockControls;
