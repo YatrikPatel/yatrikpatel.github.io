@@ -31,7 +31,15 @@
 			
 			document.body.addEventListener("click", function () {
 				controls.lock();
-			})
+			});
+			
+			controls.addEventListeners("lock", function () {
+				
+			});
+			
+			controls.addEventListeners("unlock", function () {
+				
+			});
 			
 			function animate() {
 				requestAnimationFrame( animate );
