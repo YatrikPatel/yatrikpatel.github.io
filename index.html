@@ -20,8 +20,18 @@
 			var geometry = new THREE.BoxGeometry( 1, 1, 1 );
 			var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
 			var cube = new THREE.Mesh( geometry, material );
-
-			
+			var keys = {
+				W: false,
+				A: false,
+				S: false,
+				D: false
+			};
+			document.addEventListener("keydown", function (e) {
+				if (Object.keys(keys).includes(e.keyCode)) keys[e.keyCode] = true;
+			});
+			document.addEventListener("keydown", function (e) {
+				if (Object.keys(keys).includes(e.keyCode)) keys[e.keyCode] = false;
+			});
 			function init() {
 				scene = scene = new THREE.Scene();
 				camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -52,22 +62,20 @@
 			
 			function animate() {
 				requestAnimationFrame( animate );
-				
+				console.log(keys.W);
 				if (controls.isLocked) {
 					raycaster.ray.origin.copy( controls.getObject().position );
 					raycaster.ray.origin.y -= 10;
 					
 					//controls.getObject().translateX(1);
-					controls.getObject().translateY(1); // new behavior
+					//controls.getObject().translateY(1); // new behavior
 					//controls.getObject().translateZ( 0.1 );
 				}
 				cube.rotation.x += 0.01;
 				cube.rotation.y += 0.01;
-				renderer.render( scene, camera );
+				renderer.render(scene, camera);
 			}
 			animate();
-			
-			
 		</script>
 	</body>
 </html>
