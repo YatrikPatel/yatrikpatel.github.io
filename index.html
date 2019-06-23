@@ -27,10 +27,10 @@
 				D: false
 			};
 			document.addEventListener("keydown", function (e) {
-				if (Object.keys(keys).includes(e.keyCode)) keys[e.keyCode] = true;
+				if (Object.keys(keys).includes(String.fromCharCode(e.keyCode))) keys[String.fromCharCode(e.keyCode)] = true;
 			});
 			document.addEventListener("keyup", function (e) {
-				if (Object.keys(keys).includes(e.keyCode)) keys[e.keyCode] = false;
+				if (Object.keys(keys).includes(String.fromCharCode(e.keyCod)e)) keys[String.fromCharCode(e.keyCode)] = false;
 			});
 			function init() {
 				scene = scene = new THREE.Scene();
