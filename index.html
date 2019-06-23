@@ -20,14 +20,14 @@
 			var geometry = new THREE.BoxGeometry( 1, 1, 1 );
 			var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
 			var cube = new THREE.Mesh( geometry, material );
-			var keys = {
-				W: false,
-				A: false,
-				S: false,
-				D: false
+			var keys = { // WASD
+				87: false,
+				65: false,
+				83: false,
+				68: false
 			};
 			document.addEventListener("keydown", function (e) {
-				if (Object.keys(keys).includes(String.fromCharCode(e.keyCode))) keys[String.fromCharCode(e.keyCode)] = true;
+				if (Object.keys(keys).includes(e.keyCode)) keys[e.keyCode] = true;
 			});
 			document.addEventListener("keyup", function (e) {
 				if (Object.keys(keys).includes(String.fromCharCode(e.keyCod)e)) keys[String.fromCharCode(e.keyCode)] = false;
