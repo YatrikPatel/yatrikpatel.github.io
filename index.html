@@ -29,7 +29,7 @@
 			document.addEventListener("keydown", function (e) {
 				if (Object.keys(keys).includes(e.keyCode)) keys[e.keyCode] = true;
 			});
-			document.addEventListener("keydown", function (e) {
+			document.addEventListener("keyup", function (e) {
 				if (Object.keys(keys).includes(e.keyCode)) keys[e.keyCode] = false;
 			});
 			function init() {
