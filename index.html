@@ -19,12 +19,17 @@
 			var raycaster;
 			var geometry = new THREE.BoxGeometry( 1, 1, 1 );
 			var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-			var cube = new THREE.Mesh( geometry, material );
+			var cube = new THREE.Mesh(geometry, material);
+			var direction = new THREE.Vector3();
 			var keys = { // WASD
+				87: false,
+				65: false,
+				83: false,
+				68: false
 			};
 
 			function init() {
-				scene = scene = new THREE.Scene();
+				scene = new THREE.Scene();
 				camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 				controls = new THREE.PointerLockControls(camera);
 				renderer = new THREE.WebGLRenderer({antialias: true});
@@ -60,10 +65,18 @@
 			
 			function animate() {
 				requestAnimationFrame( animate );
-				console.log(keys[87] == true);
 				if (controls.isLocked) {
 					raycaster.ray.origin.copy( controls.getObject().position );
 					raycaster.ray.origin.y -= 10;
+					direction.z = +keys[87]-+keys[83]; // 87 is W, 83 is S
+					direction.x = +keys[65]-+keys[68]; // A and D
+					direction.normalize();
+					if (keys[87] || keys[83]) {
+						controls.getObject().translateZ(1);
+					}
+					if (keys[65] || keys[68]) {
+						controls.getObject().translateX(1);
+					}
 					
 					//controls.getObject().translateX(1);
 					//controls.getObject().translateY(1); // new behavior
