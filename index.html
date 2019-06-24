@@ -21,10 +21,6 @@
 			var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
 			var cube = new THREE.Mesh( geometry, material );
 			var keys = { // WASD
-				87: false,
-				65: false,
-				83: false,
-				68: false
 			};
 
 			function init() {
@@ -45,14 +41,11 @@
 				});
 				
 				document.addEventListener("keydown", function (e) {
-					if (e.keyCode == 87) {
-						keys[87] == true;
-					}
-					if (Object.keys(keys).includes(e.keyCode)) keys[e.keyCode] = true;
+						keys[e].keyCode = true;
 					});
-				document.addEventListener("keyup", function (e) {
+				/*document.addEventListener("keyup", function (e) {
 					if (Object.keys(keys).includes(String.fromCharCode(e.keyCode))) keys[String.fromCharCode(e.keyCode)] = false;
-				});
+				});*/
 				
 				renderer.setSize( window.innerWidth, window.innerHeight );
 				document.body.appendChild( renderer.domElement );
