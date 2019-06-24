@@ -27,6 +27,9 @@
 				68: false
 			};
 			document.addEventListener("keydown", function (e) {
+				if (e.keyCode == 87) {
+					console.log("Yeet");
+				}
 				if (Object.keys(keys).includes(e.keyCode)) keys[e.keyCode] = true;
 			});
 			document.addEventListener("keyup", function (e) {
