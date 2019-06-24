@@ -41,11 +41,11 @@
 				});
 				
 				document.addEventListener("keydown", function (e) {
-						keys[e.keyCode] = true;
-					});
-				/*document.addEventListener("keyup", function (e) {
-					if (Object.keys(keys).includes(String.fromCharCode(e.keyCode))) keys[String.fromCharCode(e.keyCode)] = false;
-				});*/
+					keys[e.keyCode] = true;
+				});
+				document.addEventListener("keyup", function (e) {
+					keys[e.keyCode] = false;
+				});
 				
 				renderer.setSize( window.innerWidth, window.innerHeight );
 				document.body.appendChild( renderer.domElement );
