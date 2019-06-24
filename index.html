@@ -41,7 +41,7 @@
 				});
 				
 				document.addEventListener("keydown", function (e) {
-						keys[e].keyCode = true;
+						keys[e.keyCode] = true;
 					});
 				/*document.addEventListener("keyup", function (e) {
 					if (Object.keys(keys).includes(String.fromCharCode(e.keyCode))) keys[String.fromCharCode(e.keyCode)] = false;
