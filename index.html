@@ -66,7 +66,10 @@
 			function animate() {
 				requestAnimationFrame( animate );
 				if (controls.isLocked) {
-					console.log(controls.getDirection(new THREE.Vector3()));
+					//console.log(controls.getDirection(new THREE.Vector3()));
+					var camDir = controls.getObject().getWorldDirection(new THREE.Vector3());
+					
+					console.log(Math.atan2(camDir.x, camDir.z))
 					raycaster.ray.origin.copy( controls.getObject().position );
 					raycaster.ray.origin.y -= 10;
 					direction.z = +keys[83]-+keys[87]; // 87 is W, 83 is S
