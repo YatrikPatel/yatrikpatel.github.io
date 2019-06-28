@@ -76,10 +76,10 @@
 					direction.x = +keys[68]-+keys[65]; // D and A
 					direction.normalize();
 					if (keys[87] || keys[83]) {
-						controls.getObject().translateZ(direction.z);
+						controls.getObject().position.z += direction.z;
 					}
 					if (keys[65] || keys[68]) {
-						controls.getObject().translateX(direction.x);
+						controls.getObject().position.x += direction.x;
 					}
 					
 					//controls.getObject().translateX(1);
