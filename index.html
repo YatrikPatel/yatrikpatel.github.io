@@ -30,6 +30,7 @@
 
 			function init() {
 				scene = new THREE.Scene();
+				scene.background = new THREE.background = new THREE.color(0xD6F1FF);
 				scene.fog = new THREE.FogExp2(new THREE.Color(0xD6F1FF), 0.00025);
 				camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 				controls = new THREE.PointerLockControls(camera);
