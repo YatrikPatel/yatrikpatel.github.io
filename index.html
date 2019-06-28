@@ -72,8 +72,8 @@
 					console.log(angle)
 					raycaster.ray.origin.copy( controls.getObject().position );
 					raycaster.ray.origin.y -= 10;
-					direction.z = +keys[83]-+keys[87]; // 87 is W, 83 is S
-					direction.x = +keys[68]-+keys[65]; // D and A
+					direction.z = +keys[87]-+keys[83]; // 87 is W, 83 is S
+					direction.x = +keys[65]-+keys[68]; // A and D
 					direction.normalize();
 					if (keys[87] || keys[83]) {
 						controls.getObject().position.z += (Math.cos(angle) * direction.z);
