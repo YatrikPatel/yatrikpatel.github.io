@@ -68,18 +68,18 @@
 				if (controls.isLocked) {
 					//console.log(controls.getDirection(new THREE.Vector3()));
 					var camDir = controls.getObject().getWorldDirection(new THREE.Vector3());
-					
-					console.log(Math.atan2(camDir.x, camDir.z))
+					var angle = Math.atan2(camDir.x, camDir.z);
+					console.log(angle)
 					raycaster.ray.origin.copy( controls.getObject().position );
 					raycaster.ray.origin.y -= 10;
 					direction.z = +keys[83]-+keys[87]; // 87 is W, 83 is S
 					direction.x = +keys[68]-+keys[65]; // D and A
 					direction.normalize();
 					if (keys[87] || keys[83]) {
-						controls.getObject().position.z += direction.z;
+						controls.getObject().position.z += (Math.cos(angle) * direction.z);
 					}
 					if (keys[65] || keys[68]) {
-						controls.getObject().position.x += direction.x;
+						controls.getObject().position.x += (Math.sin(angle) * direction.x);
 					}
 					
 					//controls.getObject().translateX(1);
