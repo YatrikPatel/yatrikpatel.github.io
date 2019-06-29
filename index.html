@@ -15,7 +15,7 @@
 			var scene = new THREE.Scene();
 			var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 			var controls = new THREE.PointerLockControls(camera);
-			var renderer new THREE.WebGLRenderer({antialias: true});
+			var renderer = new THREE.WebGLRenderer({antialias: true});
 			var raycaster = new THREE.Raycaster(new THREE.Vector3(), new THREE.Vector3(0, -1, 0), 0, 10);
 			var geometry = new THREE.BoxGeometry( 1, 1, 1 );
 			var planeGeometry = new THREE.PlaneGeometry(100, 100);
