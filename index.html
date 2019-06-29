@@ -13,10 +13,10 @@
 		<script src="js/PointerLockControls.js"></script>
 		<script>
 			var scene = new THREE.Scene();
-			var camera;
-			var controls;
-			var renderer;
-			var raycaster;
+			var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+			var controls = new THREE.PointerLockControls(camera);
+			var renderer new THREE.WebGLRenderer({antialias: true});
+			var raycaster = new THREE.Raycaster(new THREE.Vector3(), new THREE.Vector3(0, -1, 0), 0, 10);
 			var geometry = new THREE.BoxGeometry( 1, 1, 1 );
 			var planeGeometry = new THREE.PlaneGeometry(100, 100);
 			var planeMaterial = new THREE.MeshBasicMaterial( {color: 0xffff00, side: THREE.DoubleSide} );
@@ -34,10 +34,10 @@
 				//scene = new THREE.Scene();
 				scene.background = new THREE.Color(0xD6F1FF);
 				scene.fog = new THREE.FogExp2(new THREE.Color(0xD6F1FF), 0.03);
-				camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-				controls = new THREE.PointerLockControls(camera);
-				renderer = new THREE.WebGLRenderer({antialias: true});
-				raycaster = new THREE.Raycaster(new THREE.Vector3(), new THREE.Vector3(0, -1, 0), 0, 10);
+				//camera = 
+				//controls = new THREE.PointerLockControls(camera);
+				//renderer = new THREE.WebGLRenderer({antialias: true});
+				//raycaster = new THREE.Raycaster(new THREE.Vector3(), new THREE.Vector3(0, -1, 0), 0, 10);
 				
 				/*controls.addEventListener('lock', function () {
 
