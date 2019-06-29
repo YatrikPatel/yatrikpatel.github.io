@@ -30,14 +30,11 @@
 				83: false,
 				68: false
 			};
+			plane.rotation.x = Math.PI/2;
 
 				//scene = new THREE.Scene();
 				scene.background = new THREE.Color(0xD6F1FF);
 				scene.fog = new THREE.FogExp2(new THREE.Color(0xD6F1FF), 0.03);
-				//camera = 
-				//controls = new THREE.PointerLockControls(camera);
-				//renderer = new THREE.WebGLRenderer({antialias: true});
-				//raycaster = new THREE.Raycaster(new THREE.Vector3(), new THREE.Vector3(0, -1, 0), 0, 10);
 				
 				/*controls.addEventListener('lock', function () {
 
@@ -93,7 +90,6 @@
 				}
 				cube.rotation.x += 0.01;
 				cube.rotation.y += 0.01;
-				plane.rotation.x += 0.01;
 								//plane.rotation.y += 0.01;
 
 				renderer.render(scene, camera);
