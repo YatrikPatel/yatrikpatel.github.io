@@ -30,7 +30,6 @@
 				83: false,
 				68: false
 			};
-			plane.rotation.x = Math.PI/2;
 
 				//scene = new THREE.Scene();
 				scene.background = new THREE.Color(0xD6F1FF);
@@ -60,7 +59,8 @@
 				scene.add(cube);
 				scene.add(plane);
 				scene.add(controls.getObject());
-			
+				plane.rotation.x = Math.PI/2;
+
 				camera.position.z = 5;
 			
 			function animate() {
