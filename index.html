@@ -18,6 +18,9 @@
 			var renderer;
 			var raycaster;
 			var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+			var planeGeometry = new THREE.PlaneGeometry(5, 20);
+			var planeMaterial = new THREE.MeshBasicMaterial( {color: 0xffff00, side: THREE.DoubleSide} );
+			var plane = new THREE.Mesh( geometry, material );
 			var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
 			var cube = new THREE.Mesh(geometry, material);
 			var direction = new THREE.Vector3();
@@ -59,6 +62,7 @@
 			
 
 				scene.add(cube);
+				scene.add(plane);
 				scene.add(controls.getObject());
 			
 				camera.position.z = 5;
