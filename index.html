@@ -12,7 +12,7 @@
 		<script src="js/three.js"></script>
 		<script src="js/PointerLockControls.js"></script>
 		<script>
-			var scene;
+			var scene = new THREE.scene();
 			var camera;
 			var controls;
 			var renderer;
@@ -31,8 +31,7 @@
 				68: false
 			};
 
-			function init() {
-				scene = new THREE.Scene();
+				//scene = new THREE.Scene();
 				scene.background = new THREE.Color(0xD6F1FF);
 				scene.fog = new THREE.FogExp2(new THREE.Color(0xD6F1FF), 0.03);
 				camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -66,8 +65,6 @@
 				scene.add(controls.getObject());
 			
 				camera.position.z = 5;
-			}
-			init();
 			
 			function animate() {
 				requestAnimationFrame( animate );
