@@ -83,7 +83,8 @@
 					direction.x = +keys[65]-+keys[68]; // A and D
 					direction.normalize();
 					if (keys[87] || keys[83]) {
-						controls.getObject().position.z += (Math.cos(angle) * direction.z);
+						controls.getObject().position.z += (Math.cos(angle));
+						controls.getObject().position.x += (Math.sin(angle));
 					}
 					if (keys[65] || keys[68]) {
 						controls.getObject().position.x += (Math.sin(angle) * direction.x);
